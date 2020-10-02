@@ -5,7 +5,7 @@ const auth = require("./auth/auth");
 const tasks = require("./routes/tasks");
 const home = require("./routes/home");
 require("./loging/loging")();
-// require("./db/db")();
+require("./db/db")();
 app.use(express.json());
 app.use("/", home);
 
