@@ -12,7 +12,7 @@ route.post("/", async (req, res) => {
   const isValid = await bcrypt.compare(req.body.password, user.password);
   if (!isValid) return res.status(404).send("wrong pass");
   const token = user.generateAuthToken();
-  res.header("x-auth-token", token).send(isValid);
+  res.header("x-auth-token", token).send(user);
 });
 
 module.exports = route;
