@@ -3,7 +3,7 @@ const winston = require("winston");
 
 module.exports = function () {
   try {
-    mongoose.connect("mongodb://localhost/karya", {
+    mongoose.connect(process.env.MONGODB_URL || "mongodb://localhost/karya", {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

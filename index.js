@@ -3,9 +3,12 @@ const app = express();
 const users = require("./routes/users");
 const auth = require("./auth/auth");
 const tasks = require("./routes/tasks");
+const home = require("./routes/home");
 require("./loging/loging")();
-require("./db/db")();
+// require("./db/db")();
 app.use(express.json());
+app.use("/", home);
+
 app.use("/api/users", users);
 app.use("/api/auth", auth);
 app.use("/api/tasks", tasks);
